@@ -188,6 +188,7 @@ public interface RandomStream {
     *  @return the generated integer
     */
    public int nextInt (int i, int j);
+   public int nextInt ();// used to return a coordinate in int format in DigitalBase2
 
    /**
     * Generates `n` (pseudo)random numbers from the discrete uniform
