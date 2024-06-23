@@ -12,7 +12,7 @@ public class Wafom extends WafomBase {
 	private double c = 0.0;
 
 	/**
-	 * Initializes the WafomNUS
+	 * 
 	 * 
 	 * @param digitalNet The Digital Net Base 2 instance.
 	 * @param outDigits  The precision of the points.
@@ -93,31 +93,6 @@ public class Wafom extends WafomBase {
 		return((kahanSum.getSum() / (double) numPoints));
 	}
 
-	@Override
-	public double computeWafomRQMC() throws IOException {
-
-		double prod = 1.0, somme = 0.0;
-		long numPoints = digitalNet.getNumPoints();
-
-		PointSetIterator iter = digitalNet.iteratorNoGray();
-
-		while (iter.hasNextPoint()) {
-			prod = 1.0;
-
-			while (iter.hasNextCoordinate()) {
-
-				int u_i_j = iter.nextInt(); // added this in pointSetiterator to return the the coodinate in int format
-				for (int l = 1; l <= outDigits; l++) {
-					int u_i_j_l = ((u_i_j >> (outDigits - l)) & 1);
-					double exponent = (factor * (l + h));
-					prod *= (1 + (1 - 2 * u_i_j_l) * Math.pow(2, -exponent));
-				}
-
-			}
-			somme += prod;
-			iter.resetToNextPoint();
-		}
-		return Math.sqrt(-1 + (somme / numPoints));
-	}
+	
 
 }
