@@ -21,7 +21,7 @@ import wafomExperiments.KahanSummation;
  * 
  * WAFOM(P) = -1 + \frac{1}{|P|} \left( \sum_{\mathbf{x}_i \in P}
  * \prod_{j=1}^{s} \prod_{l=1}^{w} \left( 1 + \eta(x_{i,j,l}) 2^{-(l+1)} \right)
- * \right) .
+ * \right).
  * 
  * For Goda's definition:
  * 
@@ -40,8 +40,8 @@ import wafomExperiments.KahanSummation;
  * The method, proposed by Shin Harase in "A search for extensible low-WAFOM
  * point sets," Monte Carlo Methods and Applications 22.4 (2016), pp. 349–357,
  * involves dividing a coordinate of a point with 'w' precision into 'q'
- * subparts, each containing 'l' elements if q is a divisor of the number of
- * 'w'. When 'q' is not a divisor of the number of output digits then will
+ * subparts, each containing 'l' elements if q is a divisor of 'w'.
+ * When 'q' is not a divisor of the number of output digits then there will
  * another be a segment of lehgth t where \(t = w \mod q\) .
  * 
  * A coordinate of a point is expressed as \(X^i = d_1^i, \ldots, d_q^i,
